@@ -45,9 +45,7 @@ class DishTypeListView(generic.ListView):
 
         name = self.request.GET.get("name", "")
 
-        context["search_form"] = DishTypesSearchForm(initial={
-            "name": name
-        })
+        context["search_form"] = DishTypesSearchForm(initial={"name": name})
 
         return context
 
@@ -56,9 +54,7 @@ class DishTypeListView(generic.ListView):
         form = DishTypesSearchForm(self.request.GET)
 
         if form.is_valid():
-            return queryset.filter(
-                name__icontains=form.cleaned_data["name"]
-            )
+            return queryset.filter(name__icontains=form.cleaned_data["name"])
 
         return queryset
 
@@ -93,9 +89,7 @@ class DishListView(generic.ListView):
 
         name = self.request.GET.get("name", "")
 
-        context["search_form"] = DishesSearchForm(initial={
-            "name": name
-        })
+        context["search_form"] = DishesSearchForm(initial={"name": name})
 
         return context
 
@@ -104,9 +98,7 @@ class DishListView(generic.ListView):
         form = DishesSearchForm(self.request.GET)
 
         if form.is_valid():
-            return queryset.filter(
-                name__icontains=form.cleaned_data["name"]
-            )
+            return queryset.filter(name__icontains=form.cleaned_data["name"])
 
         return queryset
 
@@ -143,9 +135,7 @@ class CookListView(LoginRequiredMixin, generic.ListView):
 
         username = self.request.GET.get("username", "")
 
-        context["search_form"] = CookSearchForm(initial={
-            "username": username
-        })
+        context["search_form"] = CookSearchForm(initial={"username": username})
 
         return context
 
@@ -154,9 +144,7 @@ class CookListView(LoginRequiredMixin, generic.ListView):
         form = CookSearchForm(self.request.GET)
 
         if form.is_valid():
-            return queryset.filter(
-                username__icontains=form.cleaned_data["username"]
-            )
+            return queryset.filter(username__icontains=form.cleaned_data["username"])
 
         return queryset
 
@@ -184,9 +172,7 @@ class CookDeleteView(LoginRequiredMixin, generic.DeleteView):
 @login_required
 def toggle_assign_to_dish(request, pk):
     cook = Cook.objects.get(id=request.user.id)
-    if (
-        Dish.objects.get(id=pk) in cook.dishes.all()
-    ):
+    if Dish.objects.get(id=pk) in cook.dishes.all():
         cook.dishes.remove(pk)
     else:
         cook.dishes.add(pk)
