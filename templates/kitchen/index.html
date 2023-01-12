@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <div>
+    <div class="header-text">
+        <h1>Kitchen Service</h1>
+      <p><i>Welcome to Best Restaurant</i></p>
+    </div>
+    <div class="row library-content">
+        <div class="border-right">Total number of dishes: <span>{{ num_dish }}</span></div>
+        <div class="border-right">Total number of types of dishes: <span>{{ num_dish_type }}</span></div>
+        <div>Total number of cooks: <span>{{ num_cook }}</span></div>
+    </div>
+  </div>
+{% endblock %}

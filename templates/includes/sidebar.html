@@ -1,0 +1,24 @@
+<ul class="sidebar-nav list-group">
+  {% if user.is_authenticated %}
+    <p class="user-name">User: <span>{{ user.username }}</span></p>
+    <a href="{% url 'logout' %}">
+      <li class="list-group-item">Log out</li>
+    </a>
+  {% else %}
+    <li class="list-group-item"><a href="{% url 'login' %}">Login</a></li>
+  {% endif %}
+
+  <br>
+  <a href="{% url 'kitchen:index' %}">
+    <li class="list-group-item">Home Page</li>
+  </a>
+  <a href="{% url 'kitchen:cook-list' %}">
+    <li class="list-group-item">All cookers</li>
+  </a>
+  <a href="{% url 'kitchen:dish-list' %}">
+    <li class="list-group-item">All dish</li>
+  </a>
+  <a href="{% url 'kitchen:dish-type-list' %}">
+    <li class="list-group-item">All dish types</li>
+  </a>
+</ul>

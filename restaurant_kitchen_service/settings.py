@@ -37,6 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'crispy_forms',
+    'kitchen'
 ]
 
 MIDDLEWARE = [
@@ -50,6 +52,8 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'restaurant_kitchen_service.urls'
+
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 TEMPLATES = [
     {
@@ -68,6 +72,8 @@ TEMPLATES = [
     },
 ]
 
+CRISPY_TEMPLATE_PACK = "bootstrap4"
+
 WSGI_APPLICATION = 'restaurant_kitchen_service.wsgi.application'
 
 
@@ -81,7 +87,9 @@ DATABASES = {
     }
 }
 
+LOGIN_REDIRECT_URL = "/"
 
+AUTH_USER_MODEL = 'kitchen.Cook'
 # Password validation
 # https://docs.djangoproject.com/en/4.1/ref/settings/#auth-password-validators
 
@@ -118,6 +126,9 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 
+STATIC_ROOT = BASE_DIR / "staticfiles"
+
+STATICFILES_DIRS = (BASE_DIR / "static",)
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 

@@ -1,0 +1,128 @@
+body {
+    background: rgb(2,0,36);
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(250,250,250,1) 35%, rgba(101,101,184,1) 72%, rgba(53,53,98,1) 87%);
+}
+
+.user-name {
+    color: white;
+    margin: 16px;
+}
+
+.user-name span{
+    font-weight: bold;
+}
+
+.main-container {
+    padding: 18px;
+}
+
+.header-text p {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.library-content {
+    color: white;
+    text-shadow: 0 2px 2px black;
+    border-radius: 8px;
+    padding: 21px;
+    box-shadow: 0 0 5px 0 black;
+    display: flex;
+    justify-content: center;
+    font-size: 18px;
+    margin: 0 auto;
+    background: cornflowerblue;
+}
+
+.library-content span {
+    color: violet;
+    font-size: 24px;
+    font-weight: bold;
+    padding: 8px;
+}
+
+.library-content > div {
+    padding: 18px;
+}
+
+.search-block {
+    padding-bottom: 18px;
+}
+
+.table-block {
+    border: 1px solid white;
+    border-radius: 3px;
+}
+
+.table-head {
+    font-size: 16px
+}
+
+.list-dish-head {
+    display: flex;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+.list-dish-head .add-button{
+    display: flex;
+    border: 1px solid blue;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: black;
+    border-radius: 4px;
+    margin-left: 16px;
+    width: 60px;
+    height: 36px;
+}
+
+.list-dish-head .add-button:hover{
+    cursor: pointer;
+    background: cornflowerblue;
+    color: white;
+    border: 1px solid cornflowerblue;
+}
+
+.list-dish-head .add-button a{
+    font-size: 26px;
+}
+
+.list-dish-head .add-button:hover a{
+    text-decoration: none;
+    color: white;
+}
+
+.custom-link {
+    color: white;
+}
+
+.sidebar-nav a:hover{
+    text-decoration: none!important;
+}
+
+.sidebar-nav {
+    background: repeating-linear-gradient(45deg, black, transparent 100px);
+}
+
+.sidebar-nav li:hover{
+    background: cornflowerblue;
+    color: white;
+    font-weight: bold;
+}
+
+.submit-button {
+    height: 38px;
+    background: blue;
+    border: none;
+    border-radius: 4px;
+    margin-left: 8px;
+    color: white;
+    padding: 0 16px;
+}
+
+.submit-button:hover {
+    color: blue;
+    background: white;
+    box-shadow: 0 0 4px 0 blue;
+}
