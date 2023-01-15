@@ -110,7 +110,7 @@ class DishDetailView(generic.DetailView):
 class DishCreateView(LoginRequiredMixin, generic.CreateView):
     model = DishType
     form_class = DishForm
-    template_name = "kitchen/dish_type_form.html"
+    template_name = "kitchen/dish_form.html"
     success_url = reverse_lazy("kitchen:dish-list")
 
 

@@ -45,13 +45,13 @@ class CookCreationForm(UserCreationForm):
         )
 
     def clean_years_of_experience(self):  # this logic is optional, but possible
-        return validate_years_of_experience(self.cleaned_data["license_number"])
+        return validate_years_of_experience(self.cleaned_data["years_of_experience"])
 
 
 def validate_years_of_experience(
     years_of_experience,
 ):  # regex validation is also possible here
-    if not years_of_experience.isdigit():
+    if not int(years_of_experience):
         raise ValidationError("Years of experience should be integer")
 
     return years_of_experience
